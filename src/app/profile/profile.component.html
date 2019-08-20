@@ -1,0 +1,578 @@
+<section>
+    <form [formGroup]='empdetails'>
+        <div class="text-center pt-3 pb-3">
+            <h2>Employee Details</h2>
+        </div>
+        <div class="col-md-12 row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="name" class="">First Name<span class="clr">*</span></label>
+                    <input type="text" class="form-control" formControlName='firstname' id="firstname">
+                    <div *ngIf="firstname.touched && firstname.invalid" class="alert alert-danger ">Firstname Required</div>                    
+                    <!-- <div *ngIf="firstname.touched&&firstname.invalid" class="alert alert-danger">Firstname Required
+                        <div *ngIf="firstname.error.required">Firstname Required</div>
+                        <div *ngIf="firstname.error.minLength">Firstname mininum Length {{ firstname.error.minLength.requiredLength }} </div>
+                        <div *ngIf="firstname.error.cannotcontainspace">Firstname can not Contain Space </div>
+                        <div *ngIf="firstname.error.shouldBeUnique">It's should be Unique</div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="lastname" class="">Last Name<span class="clr">*</span></label>
+                    <input type="text" class="form-control" formControlName='lastname' id="lastname">
+                    <div *ngIf="lastname.touched && lastname.invalid" class="alert alert-danger ">Lastname Required
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="employee" class="">Employee Id<span class="clr">*</span></label>
+                    <input type="text" formControlName='empid' class="form-control" id="employee">
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="contactnumber" class="">Contact Number<span class="clr">*</span></label>
+                    <input type="text" class="form-control" formControlName='contactnumber' id="contactnumber">
+                    <div *ngIf="contactnumber.touched && contactnumber.invalid" class="alert alert-danger ">Contact
+                        Required</div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="email" class="">Personal Email Id<span class="clr">*</span></label>
+                    <input type="text" class="form-control" formControlName='perlmail' id="email">
+                    <div *ngIf="perlmail.touched && perlmail.invalid" class="alert alert-danger ">Mail Required</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="gender" class="">Gender<span class="clr">*</span></label> <br>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <div class="col-md-4">
+                            <input type="radio" class="custom-control-input" formControlName='gender' id="male"
+                                name="gender">
+                            <label class="custom-control-label " for="male">Male</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="radio" class="custom-control-input " formControlName='gender' id="female"
+                                name="gender">
+                            <label class="custom-control-label" for="female">Female</label>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="radio" class="custom-control-input" formControlName='gender' id="others"
+                                name="gender">
+                            <label class="custom-control-label" for="others">Others</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="bloodtype" class="">Blood Type</label>
+                    <select id="bloodtype" class="custom-select" formControlName='bloodtype' name="bloodtype">
+                        <option value="">Select Blood ...</option>
+                        <option value="ab">AB +</option>
+                        <option value="b">B +ve</option>
+                        <option value="o">O +ve</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="officenumber" class="">Office Number</label>
+                    <input type="text" class="form-control" formControlName='officenumber' id="officenumber">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="officemail" class="">Office Mail id<span class="clr">*</span></label>
+                    <input type="text" class="form-control" formControlName='officemail' id="officemail">
+                    <div *ngIf="officemail.touched && officemail.invalid" class="alert alert-danger ">Offic Email
+                        Required</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="dob" class="">DOB<span class="clr">*</span></label>
+                    <input type="date" class="form-control" formControlName='dob' id="dob">
+                    <div *ngIf="dob.touched && dob.invalid" class="alert alert-danger ">DOB Required</div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="pannumber" class="">PAN Number<span class="clr">*</span></label>
+                    <input type="text" class="form-control" formControlName='pannumber' id="pannumber">
+                    <div *ngIf="pannumber.touched && pannumber.invalid" class="alert alert-danger ">PAN Number Required
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="passport" class="">Passport Number</label>
+                    <input type="text" class="form-control" formControlName='passport' id="passport">
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-12 row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="emgcontactname" class="">Emergency Contact Person Name<span class="clr">*</span></label>
+                    <input type="text" class="form-control" formControlName='emgcontactname' id="emgcontactname">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="emgcontactnumber" class="">Emergency Contact Number <span class="clr">*</span></label>
+                    <input type="text" class="form-control" formControlName='emgcontactnumber' id="emgcontactnumber">
+                    <div *ngIf="emgcontactnumber.touched && emgcontactnumber.invalid" class="alert alert-danger ">This
+                        Feilds is Required</div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="relationship" class="">Relatinship</label>
+                    <input type="text" class="form-control" formControlName='relationship' id="relationship">
+                    <div *ngIf="relationship.touched && relationship.invalid" class="alert alert-danger ">Relationship
+                        Required</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="address" class="">Current Address<span class="clr">*</span></label>
+                    <input type="text" class="form-control" formControlName='address' id="address">
+                    <div *ngIf="address.touched && address.invalid" class="alert alert-danger ">Address Required</div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="pincode" class="">Pincode<span class="clr">*</span></label>
+                    <input type="text" class="form-control" formControlName='pincode' id="pincode">
+                    <div *ngIf="pincode.touched && pincode.invalid" class="alert alert-danger ">Pincode Required</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="text-center pt-3 pb-3">
+            <h2>Salary Details</h2>
+        </div>
+        <div class="col-md-12 row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="backname" class="">Bank Name<span class="clr">*</span></label>
+                    <input type="text" class="form-control" formControlName='backname' id="backname">
+                    <div *ngIf="backname.touched && backname.invalid" class="alert alert-danger ">Bankname Required
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="accountno" class="">Account Number<span class="clr">*</span></label>
+                    <input type="text" class="form-control" formControlName='accountno' id="accountno">
+                    <div *ngIf="accountno.touched && accountno.invalid" class="alert alert-danger ">Account Number
+                        Required</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="branch" class="">Brach Name<span class="clr">*</span></label>
+                    <input type="text" class="form-control" formControlName='branch' id="branch">
+                    <div *ngIf="branch.touched && branch.invalid" class="alert alert-danger ">Branch Required</div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-12 row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="ifscode" class="">IFSC Code<span class="clr">*</span></label>
+                    <input type="text" class="form-control" formControlName='ifscode' id="ifscode">
+                    <div *ngIf="ifscode.touched && ifscode.invalid" class="alert alert-danger ">IFSC Code Required</div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="salary" class="">Salary<span class="clr">*</span></label>
+                    <input type="text" class="form-control" formControlName='salary' id="salary">
+                    <div *ngIf="salary.touched && salary.invalid" class="alert alert-danger ">Salary Required</div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="taxno" class="">Tax<span class="clr">*</span></label>
+                    <input type="text" class="form-control" formControlName='taxno' id="taxno">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center p-3">
+            <Button class="btn btn-primary">Save this details</Button> &nbsp;
+            <Button class="btn btn-danger">Cancel</Button>
+        </div>
+    </form>
+
+    <div>{{ empdetails.value | json}}</div>
+</section>
+
+
+<!-- <section>
+    <form [formGroup]='personaldetails'>
+        <div class="text-center pt-2 pb-3">
+            <h2>Personal Details</h2>
+        </div>
+        
+        <div class="col-md-12 row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="firstName" class="">First Name<span class="clr">*</span></label>
+                    <input type="text" formControlName='firstname' name="firstName" class="form-control" id="firstName">
+                </div>
+                <div class="form-group">
+                    <label for="contactnumber" class="">Contact Number<span class="clr">*</span></label>
+                    <input type="text" formControlName='contactnumber' class="form-control" id="contactnumber">
+                </div>
+                <div class="form-group">
+                    <label for="emgcontactname" class="">Emergency Contact Name<span class="clr">*</span></label>
+                    <input type="text" formControlName='emgcontactname' class="form-control" id="emgcontactname">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="lastname" class="">Last Name<span class="clr">*</span></label>
+                    <input type="text" formControlName='lastname' class="form-control" id="lastname">
+                </div>
+                <div class="form-group">
+                    <label for="homenumber" class="">Home Number</label>
+                    <input type="text" class="form-control" formControlName='homenumber' id="homenumber">
+                </div>
+                <div class="form-group">
+                    <label for="emgcontactnumber" class="">Emergency Contact Number<span class="clr">*</span></label>
+                    <input type="text" class="form-control" formControlName='emgcontactnumber' id="emgcontactnumber">
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="form-group">
+                    <img [src]="imgURL || '../../assets/image/default-user.jpg'" height="200" width='200px'>
+                    <input #file class="" id="file" type="file" accept='image/*' (change)="preview(file.files)" class="mt-3 "/>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="email" class="">Email id<span class="clr">*</span></label>
+                    <input type="text" formControlName='email' class="form-control" id="email">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="curtaddr" class="">Current Address<span class="clr">*</span></label>
+                    <input type="text" formControlName='curtaddr' class="form-control" id="curtaddr">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div class="col-md-9">
+                <div class="form-group">
+                    <label for="pertaddr" class="">Permanent Address<span class="clr">*</span></label>
+                    <input type="text" formControlName='pertaddr' class="form-control" id="pertaddr">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="pincode" class="">Pin code<span class="clr">*</span></label>
+                    <input type="text" formControlName='pincode' class="form-control" id="pincode">
+                </div>
+            </div>
+        </div>
+            <div class="col-md-12 row">
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="dob" class="">DOB</label>
+                        <input type="date" formControlName='dob' class="form-control" id="dob">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="certdob" class="">Certificate DOB<span class="clr">*</span></label>
+                        <input type="date" formControlName='certdob' class="form-control" id="certdob">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="bloodtype" class="">Blood Type</label>
+                        <select id="bloodtype" formControlName='bloodtype' class="custom-select" name="country">
+                            <option value="">Select Blood ...</option>
+                            <option value="australia">AB +</option>
+                            <option value="canada">B +ve</option>
+                            <option value="usa">O +ve</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="gender" class="">Gender<span class="clr">*</span></label> <br>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <div class="col-md-4">
+                                <input type="radio" class="custom-control-input" id="male" name="male">
+                                <label class="custom-control-label " for="male">Male</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="radio" class="custom-control-input " id="female" name="female">
+                                <label class="custom-control-label" for="female">Female</label>
+                            </div>
+                            <div class="col-md-2">
+                                <input type="radio" class="custom-control-input" id="others" name="other">
+                                <label class="custom-control-label" for="others">Others</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center p-3">
+                <Button class="btn btn-primary">Save this details</Button> &nbsp;
+                <Button class="btn btn-danger">Cancel</Button>
+            </div>
+    </form>
+</section>
+<div class="m-2"></div>
+<section>
+
+
+
+    <form action="">
+        <div class="text-center pt-2 pb-3">
+            <h2>Office Details</h2>
+        </div>
+        <div class="col-md-12 custom-control custom-radio custom-control-inline">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="radio" class="custom-control-input" id="hr" name="OfficeRole">
+                    <label class="custom-control-label" for="hr">HR (Human Resorce)</label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="radio" class="custom-control-input" id="finace" name="OfficeRole">
+                    <label class="custom-control-label" for="finace">Finace Manager</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <input type="radio" class="custom-control-input" id="admin" name="OfficeRole">
+                    <label class="custom-control-label" for="admin">Admin</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <input type="radio" class="custom-control-input" id="leader" name="OfficeRole">
+                    <label class="custom-control-label" for="leader">Leader</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <input type="radio" class="custom-control-input" id="emp" name="OfficeRole">
+                    <label class="custom-control-label" for="emp">Employee</label>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-12 row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">Employee id<span class="clr">*</span></label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">Date Of Joining<span class="clr">*</span></label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">Last date of Promotion</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">Desingation<span class="clr">*</span></label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">Office email ID<span class="clr">*</span></label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">Office Phone Number</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">Reporting Manager<span class="clr">*</span></label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">Type Of Holiday</label>
+                    <select id="country" class="custom-select" name="country">
+                        <option value="">Select Holiday...</option>
+                        <option value="">Indian</option>
+                        <option value="">Test</option>
+                        <option value="">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">Type of Employee<span class="clr">*</span></label>
+                    <select id="country" class="custom-select" name="country">
+                        <option value="">Select Employee...</option>
+                        <option value="">Permanet</option>
+                        <option value="">Training</option>
+                        <option value="">Contract</option>
+                        <option value="">Other</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3">
+            <Button class="btn btn-primary">Save this details</Button> &nbsp;
+            <Button class="btn btn-danger">Cancel</Button>
+        </div>
+    </form>
+</section>
+
+<div class="m-2"></div>
+<section>
+
+
+    <form action="">
+        <div class="text-center pt-2 pb-3">
+            <h2>Salary Details</h2>
+        </div>
+
+        <div class="col-md-12 row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">Bank Name<span class="clr">*</span></label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">Account Number<span class="clr">*</span></label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">PAN Number<span class="clr">*</span></label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">PF Number</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">PF UAN Number</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">ESI Number</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">Basic</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">HRA</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">Conveyance</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">Medical Allowance</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">Special Allowance</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="">Travel Allowance</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3">
+            <Button class="btn btn-primary">Save this details</Button> &nbsp;
+            <Button class="btn btn-danger">Cancel</Button>
+        </div>
+    </form>
+</section> -->

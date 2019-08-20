@@ -1,0 +1,11 @@
+p,li {
+    font-family: 'ProximaNova-Regular';
+}
+
+h4 {
+    font-family: 'WorkSans-Bold';
+}
+p.space {
+    text-indent: 80px;
+    text-align: justify;
+  }

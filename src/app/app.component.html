@@ -1,0 +1,8 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <ng-container *ngIf='url'> -->
+    <app-header *ngIf='Showheader'></app-header>
+<!-- </ng-container> -->
+<div class="container">
+    <div *ngIf='Showheader' style="height: 108px;"></div>
+    <router-outlet></router-outlet>
+</div>
