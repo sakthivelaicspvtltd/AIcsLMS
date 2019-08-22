@@ -5,15 +5,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule, routingComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { UpdateDetailsComponent } from './update-details/update-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponent,
     HeaderComponent,
+    UpdateDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +25,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-   
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

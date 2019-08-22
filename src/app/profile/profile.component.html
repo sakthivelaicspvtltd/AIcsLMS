@@ -1,242 +1,267 @@
 <section>
-    <form [formGroup]='empdetails'>
-        <div class="text-center pt-3 pb-3">
-            <h2>Employee Details</h2>
-        </div>
-        <div class="col-md-12 row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="name" class="">First Name<span class="clr">*</span></label>
-                    <input type="text" class="form-control" formControlName='firstname' id="firstname">
-                    <div *ngIf="firstname.touched && firstname.invalid" class="alert alert-danger ">Firstname Required</div>                    
-                    <!-- <div *ngIf="firstname.touched&&firstname.invalid" class="alert alert-danger">Firstname Required
+  <form [formGroup]='empdetails'>
+    <div class="text-center pt-3 pb-3">
+      <h2>Employee Details</h2>
+    </div>
+    <div class="col-md-12 row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="name" class="">First Name<span class="clr">*</span></label>
+          <input type="text" class="form-control" formControlName='firstname' id="firstname">
+          <div *ngIf="firstname.touched && firstname.invalid" class="alert alert-danger ">Firstname Required</div>
+          <!-- <div *ngIf="firstname.touched&&firstname.invalid" class="alert alert-danger">Firstname Required
                         <div *ngIf="firstname.error.required">Firstname Required</div>
                         <div *ngIf="firstname.error.minLength">Firstname mininum Length {{ firstname.error.minLength.requiredLength }} </div>
                         <div *ngIf="firstname.error.cannotcontainspace">Firstname can not Contain Space </div>
                         <div *ngIf="firstname.error.shouldBeUnique">It's should be Unique</div>
                     </div> -->
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="lastname" class="">Last Name<span class="clr">*</span></label>
-                    <input type="text" class="form-control" formControlName='lastname' id="lastname">
-                    <div *ngIf="lastname.touched && lastname.invalid" class="alert alert-danger ">Lastname Required
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="employee" class="">Employee Id<span class="clr">*</span></label>
-                    <input type="text" formControlName='empid' class="form-control" id="employee">
-                </div>
-
-            </div>
         </div>
-        <div class="col-md-12 row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="contactnumber" class="">Contact Number<span class="clr">*</span></label>
-                    <input type="text" class="form-control" formControlName='contactnumber' id="contactnumber">
-                    <div *ngIf="contactnumber.touched && contactnumber.invalid" class="alert alert-danger ">Contact
-                        Required</div>
-                </div>
-
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="email" class="">Personal Email Id<span class="clr">*</span></label>
-                    <input type="text" class="form-control" formControlName='perlmail' id="email">
-                    <div *ngIf="perlmail.touched && perlmail.invalid" class="alert alert-danger ">Mail Required</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12 row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="gender" class="">Gender<span class="clr">*</span></label> <br>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <div class="col-md-4">
-                            <input type="radio" class="custom-control-input" formControlName='gender' id="male"
-                                name="gender">
-                            <label class="custom-control-label " for="male">Male</label>
-                        </div>
-                        <div class="col-md-5">
-                            <input type="radio" class="custom-control-input " formControlName='gender' id="female"
-                                name="gender">
-                            <label class="custom-control-label" for="female">Female</label>
-                        </div>
-                        <div class="col-md-2">
-                            <input type="radio" class="custom-control-input" formControlName='gender' id="others"
-                                name="gender">
-                            <label class="custom-control-label" for="others">Others</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="bloodtype" class="">Blood Type</label>
-                    <select id="bloodtype" class="custom-select" formControlName='bloodtype' name="bloodtype">
-                        <option value="">Select Blood ...</option>
-                        <option value="ab">AB +</option>
-                        <option value="b">B +ve</option>
-                        <option value="o">O +ve</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12 row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="officenumber" class="">Office Number</label>
-                    <input type="text" class="form-control" formControlName='officenumber' id="officenumber">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="officemail" class="">Office Mail id<span class="clr">*</span></label>
-                    <input type="text" class="form-control" formControlName='officemail' id="officemail">
-                    <div *ngIf="officemail.touched && officemail.invalid" class="alert alert-danger ">Offic Email
-                        Required</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12 row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="dob" class="">DOB<span class="clr">*</span></label>
-                    <input type="date" class="form-control" formControlName='dob' id="dob">
-                    <div *ngIf="dob.touched && dob.invalid" class="alert alert-danger ">DOB Required</div>
-
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="pannumber" class="">PAN Number<span class="clr">*</span></label>
-                    <input type="text" class="form-control" formControlName='pannumber' id="pannumber">
-                    <div *ngIf="pannumber.touched && pannumber.invalid" class="alert alert-danger ">PAN Number Required
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="passport" class="">Passport Number</label>
-                    <input type="text" class="form-control" formControlName='passport' id="passport">
-                </div>
-            </div>
-
-        </div>
-        <div class="col-md-12 row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="emgcontactname" class="">Emergency Contact Person Name<span class="clr">*</span></label>
-                    <input type="text" class="form-control" formControlName='emgcontactname' id="emgcontactname">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="emgcontactnumber" class="">Emergency Contact Number <span class="clr">*</span></label>
-                    <input type="text" class="form-control" formControlName='emgcontactnumber' id="emgcontactnumber">
-                    <div *ngIf="emgcontactnumber.touched && emgcontactnumber.invalid" class="alert alert-danger ">This
-                        Feilds is Required</div>
-
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="relationship" class="">Relatinship</label>
-                    <input type="text" class="form-control" formControlName='relationship' id="relationship">
-                    <div *ngIf="relationship.touched && relationship.invalid" class="alert alert-danger ">Relationship
-                        Required</div>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12 row">
-            <div class="col-md-8">
-                <div class="form-group">
-                    <label for="address" class="">Current Address<span class="clr">*</span></label>
-                    <input type="text" class="form-control" formControlName='address' id="address">
-                    <div *ngIf="address.touched && address.invalid" class="alert alert-danger ">Address Required</div>
-
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="pincode" class="">Pincode<span class="clr">*</span></label>
-                    <input type="text" class="form-control" formControlName='pincode' id="pincode">
-                    <div *ngIf="pincode.touched && pincode.invalid" class="alert alert-danger ">Pincode Required</div>
-
-                </div>
-            </div>
-        </div>
-        <div class="text-center pt-3 pb-3">
-            <h2>Salary Details</h2>
-        </div>
-        <div class="col-md-12 row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="backname" class="">Bank Name<span class="clr">*</span></label>
-                    <input type="text" class="form-control" formControlName='backname' id="backname">
-                    <div *ngIf="backname.touched && backname.invalid" class="alert alert-danger ">Bankname Required
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="accountno" class="">Account Number<span class="clr">*</span></label>
-                    <input type="text" class="form-control" formControlName='accountno' id="accountno">
-                    <div *ngIf="accountno.touched && accountno.invalid" class="alert alert-danger ">Account Number
-                        Required</div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="branch" class="">Brach Name<span class="clr">*</span></label>
-                    <input type="text" class="form-control" formControlName='branch' id="branch">
-                    <div *ngIf="branch.touched && branch.invalid" class="alert alert-danger ">Branch Required</div>
-
-                </div>
-            </div>
-
-        </div>
-        <div class="col-md-12 row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="ifscode" class="">IFSC Code<span class="clr">*</span></label>
-                    <input type="text" class="form-control" formControlName='ifscode' id="ifscode">
-                    <div *ngIf="ifscode.touched && ifscode.invalid" class="alert alert-danger ">IFSC Code Required</div>
-
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="salary" class="">Salary<span class="clr">*</span></label>
-                    <input type="text" class="form-control" formControlName='salary' id="salary">
-                    <div *ngIf="salary.touched && salary.invalid" class="alert alert-danger ">Salary Required</div>
-
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="taxno" class="">Tax<span class="clr">*</span></label>
-                    <input type="text" class="form-control" formControlName='taxno' id="taxno">
-                </div>
-            </div>
-
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="lastname" class="">Last Name<span class="clr">*</span></label>
+          <input type="text" class="form-control" formControlName='lastname' id="lastname">
+          <div *ngIf="lastname.touched && lastname.invalid" class="alert alert-danger ">Lastname Required
+          </div>
         </div>
 
-        <div class="text-center p-3">
-            <Button class="btn btn-primary">Save this details</Button> &nbsp;
-            <Button class="btn btn-danger">Cancel</Button>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="employee" class="">Employee Id<span class="clr">*</span></label>
+          <input type="text" formControlName='empid' class="form-control" id="employee">
         </div>
-    </form>
 
-    <div>{{ empdetails.value | json}}</div>
+      </div>
+    </div>
+    <div class="col-md-12 row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="contactnumber" class="">Contact Number<span class="clr">*</span></label>
+          <input type="text" class="form-control" formControlName='contactnumber' id="contactnumber">
+          <div *ngIf="contactnumber.touched && contactnumber.invalid" class="alert alert-danger ">
+            <div *ngIf="contactnumber.required">Firstname Required</div>
+            <div *ngIf="contactnumber.maxLength">Max Allowed</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="email" class="">Personal Email Id<span class="clr">*</span></label>
+          <input type="text" class="form-control" formControlName='personalmail' id="email">
+          <div *ngIf="personalmail.touched && personalmail.invalid" class="alert alert-danger ">Mail Required</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="gender" class="">Gender<span class="clr">*</span></label> <br>
+          <div class="custom-control custom-radio custom-control-inline">
+            <div class="col-md-4">
+              <input type="radio" class="custom-control-input" formControlName='gender' id="male" name="gender">
+              <label class="custom-control-label " for="male">Male</label>
+            </div>
+            <div class="col-md-5">
+              <input type="radio" class="custom-control-input " formControlName='gender' id="female" name="gender">
+              <label class="custom-control-label" for="female">Female</label>
+            </div>
+            <div class="col-md-2">
+              <input type="radio" class="custom-control-input" formControlName='gender' id="others" name="gender">
+              <label class="custom-control-label" for="others">Others</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="bloodtype" class="">Blood Type</label>
+          <select id="bloodtype" class="custom-select" formControlName='bloodtype' name="bloodtype">
+            <option value="">Select Blood ...</option>
+            <option value="ab">AB +</option>
+            <option value="b">B +ve</option>
+            <option value="o">O +ve</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="officenumber" class="">Office Number</label>
+          <input type="text" class="form-control" formControlName='officenumber' id="officenumber">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="officemail" class="">Office Mail id<span class="clr">*</span></label>
+          <input type="text" class="form-control" formControlName='officemail' id="officemail">
+          <div *ngIf="officemail.touched && officemail.invalid" class="alert alert-danger ">Offic Email
+            Required</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="dob" class="">DOB<span class="clr">*</span></label>
+          <input type="date" class="form-control" formControlName='dob' id="dob">
+          <div *ngIf="dob.touched && dob.invalid" class="alert alert-danger ">DOB Required</div>
+
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="pannumber" class="">PAN Number</label>
+          <input type="text" class="form-control" formControlName='pancardnumber' id="pannumber">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="passport" class="">Passport Number</label>
+          <input type="text" class="form-control" formControlName='passport' id="passport">
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-12 row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="emgcontactname" class="">Emergency Contact Person Name<span class="clr">*</span></label>
+          <input type="text" class="form-control"  formControlName='emgcontactname'  id="emgcontactname">
+          <div *ngIf="emgcontactname.touched && emgcontactname.invalid" class="alert alert-danger ">This Feilds is Required</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="emgcontactnumber" class="">Emergency Contact Number <span class="clr">*</span></label>
+          <input type="text" class="form-control" formControlName='emgcontactnumber' id="emgcontactnumber">
+          <div *ngIf="emgcontactnumber.touched && emgcontactnumber.invalid" class="alert alert-danger ">This Feilds is Required</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="relationship" class="">Relatinship</label>
+          <input type="text" class="form-control" formControlName='relationship' id="relationship">
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 row">
+      <div class="col-md-8">
+        <div class="form-group">
+          <label for="address" class="">Current Address<span class="clr">*</span></label>
+          <input type="text" class="form-control" formControlName='address' id="address">
+          <div *ngIf="address.touched && address.invalid" class="alert alert-danger ">Address Required</div>
+
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="pincode" class="">Pincode<span class="clr">*</span></label>
+          <input type="text" class="form-control" formControlName='pincode' id="pincode">
+          <div *ngIf="pincode.touched && pincode.invalid" class="alert alert-danger ">Pincode Required</div>
+
+        </div>
+      </div>
+    </div>
+    <div class="text-center pt-3 pb-3">
+      <h2>Salary Details</h2>
+    </div>
+    <div class="col-md-12 row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="bankname" class="">Bank Name<span class="clr">*</span></label>
+          <input type="text" class="form-control" formControlName='bankname' id="bankname">
+          <div *ngIf="bankname.touched && bankname.invalid" class="alert alert-danger ">Bankname Required
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="accountno" class="">Account Number<span class="clr">*</span></label>
+          <input type="text" class="form-control" formControlName='accountno' id="accountno">
+          <div *ngIf="accountno.touched && accountno.invalid" class="alert alert-danger ">Account Number
+            Required</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="branch" class="">Brach Name<span class="clr">*</span></label>
+          <input type="text" class="form-control" formControlName='branch' id="branch">
+          <div *ngIf="branch.touched && branch.invalid" class="alert alert-danger ">Branch Required</div>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-12 row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="ifscode" class="">IFSC Code<span class="clr">*</span></label>
+          <input type="text" class="form-control" formControlName='ifscode' id="ifscode">
+          <div *ngIf="ifscode.touched && ifscode.invalid" class="alert alert-danger ">IFSC Code Required</div>
+
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="salary" class="">Salary<span class="clr">*</span></label>
+          <input type="text" class="form-control" formControlName='salary' id="salary">
+          <div *ngIf="salary.touched && salary.invalid" class="alert alert-danger ">Salary Required</div>
+
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="taxno" class="">Tax<span class="clr">*</span></label>
+          <input type="text" class="form-control" formControlName='taxno' id="taxno">
+        </div>
+      </div> <br>
+
+      <!-- //Social links -->
+      <div class="text-center pt-3 pb-3 col-md-12">
+        <h2>Social Media</h2>
+      </div>
+      <div class="col-md-12 row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="bankname" class="">Facebook Link</label>
+            <input type="text" class="form-control" formControlName='bankname' id="bankname">
+            <div *ngIf="bankname.touched && bankname.invalid" class="alert alert-danger ">Bankname Required
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="accountno" class="">LinkedIn Link</label>
+            <input type="text" class="form-control" formControlName='accountno' id="accountno">
+            <div *ngIf="accountno.touched && accountno.invalid" class="alert alert-danger ">Account Number
+              Required</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="branch" class="">Twitter Link</label>
+            <input type="text" class="form-control" formControlName='branch' id="branch">
+            <div *ngIf="branch.touched && branch.invalid" class="alert alert-danger ">Branch Required</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="text-center p-3">
+      <Button class="btn btn-primary">Save this details</Button> &nbsp;
+      <Button class="btn btn-danger">Cancel</Button>
+    </div>
+  </form>
+
+  <div>{{ empdetails.value | json}}</div>
 </section>
 
 
@@ -245,7 +270,7 @@
         <div class="text-center pt-2 pb-3">
             <h2>Personal Details</h2>
         </div>
-        
+
         <div class="col-md-12 row">
             <div class="col-md-4">
                 <div class="form-group">
