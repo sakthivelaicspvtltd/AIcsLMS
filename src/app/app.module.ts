@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { UpdateDetailsComponent } from './update-details/update-details.component';
+import { ShowDetailsComponent } from './show-details/show-details.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { UpdateDetailsComponent } from './update-details/update-details.componen
     routingComponent,
     HeaderComponent,
     UpdateDetailsComponent,
+    ShowDetailsComponent,
   ],
   imports: [
     BrowserModule,
