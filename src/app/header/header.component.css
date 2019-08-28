@@ -5,3 +5,11 @@
     color: white !important;
     direction: none;
 }
+.active{
+  font-size: 16px;
+}
+.navbar-brand{
+  font-family: 'WorkSans-Regular';
+  font-size: 18px;
+
+}

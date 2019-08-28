@@ -9,6 +9,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent  {
   closeResult: string;
+  page = 1;
+  pageSize = 10;
   private url = 'http://jsonplaceholder.typicode.com/posts';
   Employees;
   // Edit; Show; Delete;

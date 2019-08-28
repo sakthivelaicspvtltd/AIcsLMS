@@ -1,10 +1,10 @@
 <div class="col-md-12">
-    <div class="row">
+  <!-- <div class="row">
         <div class="col-md-6">
             <h6>Events:</h6>
             <p>Name Birthday</p>
             <p>Name Anniversary</p>
-           
+
         </div>
         <div class="col-md-6">
             <h6>About You:</h6>
@@ -14,5 +14,138 @@
             <p>Gender</p>
             <p>Experence</p>
         </div>
-    </div>
+    </div> -->
+  <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="imagess" alt="Random first slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>First slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="imagess" alt="Random second slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>Second slide label</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="imagess" alt="Random third slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>Third slide label</h3>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
 </div>
+
+<div class="col-md-12 pt-5">
+      <div class="row text-center">
+    <div class="col-md-6">
+      <!-- <h6>Events:</h6>
+      <p>Name Birthday</p>
+      <p>Name Anniversary</p> -->
+      <h2>Events</h2>
+      <table class="table table-hover ">
+        <thead class="thead-light">
+          <tr>
+            <th>Sno</th>
+            <th>Name</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Moe</td>
+            <td>mary@example.com</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <!-- <h6>About You:</h6>
+      <p>Name</p>
+      <p>Designation</p>
+      <p>Bate if Birth</p>
+      <p>Gender</p>
+      <p>Experence</p> -->
+      <h2>Profile</h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>Name</th>
+            <th> : </th>
+            <td>Doe</td>
+          </tr>
+          <tr>
+            <th>Photo</th>
+            <th> : </th>
+            <td><img src="../../assets/image/default-user.jpg" alt="" width="150px"></td>
+          </tr>
+          <tr>
+            <th>Designation</th>
+            <th> : </th>
+            <td>Moe</td>
+          </tr>
+          <tr>
+            <th>Bate if Birth</th>
+            <th> : </th>
+            <td>Dooley</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <th> : </th>
+            <td>Dooley</td>
+          </tr>
+          <tr>
+            <th>Gender</th>
+            <th> : </th>
+            <td>Dooley</td>
+          </tr>
+          <tr>
+            <th>Experence</th>
+            <th> : </th>
+            <td>ssakthivel272dev@gmail.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!--
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-md-6">
+      <h6>Events:</h6>
+      <p>Name Birthday</p>
+      <p>Name Anniversary</p>
+    </div>
+    <div class="col-md-6">
+      <h6>About You:</h6>
+      <p>Name</p>
+      <p>Designation</p>
+      <p>Bate if Birth</p>
+      <p>Gender</p>
+      <p>Experence</p>
+    </div>
+  </div>
+</div> -->
