@@ -20,6 +20,7 @@ import { ShowDetailsComponent } from './show-details/show-details.component';
     HeaderComponent,
     UpdateDetailsComponent,
     ShowDetailsComponent,
+
   ],
   imports: [
     BrowserModule,

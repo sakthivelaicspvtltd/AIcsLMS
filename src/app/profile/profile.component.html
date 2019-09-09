@@ -39,8 +39,8 @@
         <div class="form-group">
           <label for="contactnumber" class="">Contact Number<span class="clr">*</span></label>
           <input type="text" class="form-control" formControlName='contactnumber' id="contactnumber">
-          <div *ngIf="contactnumber.touched && contactnumber.invalid" class="alert alert-danger ">
-            <div *ngIf="contactnumber.required">Firstname Required</div>
+          <div *ngIf="contactnumber.touched && contactnumber.invalid" class="alert alert-danger ">Contact Required
+            <div *ngIf="contactnumber.required">Contact Required</div>
             <div *ngIf="contactnumber.maxLength">Max Allowed</div>
           </div>
         </div>
