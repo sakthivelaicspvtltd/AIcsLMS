@@ -26,6 +26,7 @@ export class HomeComponent  {
   }
   openXl(content, emp, type) {
     console.log(emp.id);
+    console.log(emp);
     // if (type == 'edit') {
     //   this.Edit = true;
     // } else if (type == 'show') {

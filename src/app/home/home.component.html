@@ -58,18 +58,18 @@
     <!-- <tr *ngFor="let item of items | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
     </tr> -->
     <tr *ngFor="let emp of Employees |  slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-      <td>{{ emp.id }}</td>
+      <td>{{emp.id}}</td>
       <!-- <td>{{ emp.id }}</td> -->
       <td>Iswarya devi</td>
       <td>HR executive</td>
-      <td>91-9840811906</td>
+      <td>91-984081199</td>
       <td>27.09.1992</td>
       <td>Chennai</td>
       <td>P.Bharvatdy</td>
-      <td>9344507685</td>
+      <td>9344507785</td>
       <td>
         <span class='btn btn-primary' (click)="openXl(content,emp)">Edit</span>
-        <span class='btn btn-success ml-1' (click)="openXl(content)">Show</span>
+        <span class='btn btn-success ml-1' (click)="openXl(content,emp)">Show</span>
         <span class='btn btn-danger ml-1'>Delete</span>
       </td>
     </tr>
